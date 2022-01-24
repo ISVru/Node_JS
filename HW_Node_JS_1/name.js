@@ -1,6 +1,9 @@
-const http = require('http'); // подключение модуля
-const server = http.createServer((request, response) =>
-{ // вызов метода создания http сервера
-    console.log("HTTP works!");
+const http = require('http'); 
+const server = http.createServer((req, res) =>
+{ 
+    console.log("HTTP works!")
+    res.writeHead(200, {'Content-Type':'text/html'});
+    res.write('<h2>Hello!</h2>');
+    res.end();
 });
 server.listen(8080);
